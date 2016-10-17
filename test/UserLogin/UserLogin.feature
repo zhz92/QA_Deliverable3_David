@@ -16,10 +16,6 @@ I can see my account status.
                 When I try to login with correct username and incorrect password
                 Then I should see an error message
 
-#         Scenario: Login with incorrect username and correct password
-# 		Given an incorrect username and an correct password
-#                 When I try to login with incorrect username and correct password
-#                 Then I should see an error message again
 
 
    

@@ -84,37 +84,6 @@ public class StepDefinitions {
        assertEquals("ERROR", error.getText());
     }
     
-    /***
-     * Scenario 3
-     ***/
-//     @Given("an incorrect username and an correct password")
-//    public void openLoginPageOneMoreTime() {
-//        System.setProperty("webdriver.gecko.driver", "/Users/davidzhang/Desktop/geckodriver");
-//        driver = new FirefoxDriver();
-//        driver.get(LOGIN_PAGE);
-//        wait = new WebDriverWait(driver, 30);
-//    }
-    
-//    @When("I try to login with incorrect username and correct password")
-//    public void login_with_incorrect_username() {
-//      WebElement username = driver.findElement(By.id("log"));
-//      username.sendKeys("Jim");
-//      
-//      WebElement password = driver.findElement(By.id("pwd"));
-//      password.sendKeys("123456");
-//      
-//      WebElement login = driver.findElement(By.id("login"));
-//      login.submit();
-//    }
-//    
-//    @Then("I should see an error message again")
-//    public void login_failagain() {
-//       WebElement errorAgain;   
-//       errorAgain = (new WebDriverWait(driver, 30)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='ERROR: Login failed because your IP address has been blocked. Please contact the administrator.']")));
-//       assertEquals("ERROR: Login failed because your IP address has been blocked. Please contact the administrator.", errorAgain.getText());
-//       System.out.println("------------->"+errorAgain.getText());
-//    }
-    
     @After
     public void cleanUp() {
         driver.quit();
