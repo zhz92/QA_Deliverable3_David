@@ -20,6 +20,7 @@ The issues I encountered in this assignment are as follows,
 3. In the web site system test, there are lots of places I need to use findelement(By.id) or (By.xpath). Some of the xpath are little bit difficult to define due to the deep depth of the element I want to find. However, the xpath by attribute selector and by text() are convenient for this. Such as, 
 
   By.xpath("//input[contains(@value, 'Search Products')]")
+  
   By.xpath("//*[text()='Sorry, but nothing matched your search criteria. Please try again with some different keywords.']" 
   
   Although there are wonderful tool in Chrome to generate xpath automatically, I decide to get the xpath by myself in order to learn how to use it.
