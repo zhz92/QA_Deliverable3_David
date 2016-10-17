@@ -6,7 +6,7 @@ This assignment is for system testing on a given web site: http://store.demoqa.c
 
 In this assignment, I was able to learn how system testing looks like. The user story and sceanrios for each of them describe the features in a user level thus enable users to understand as the testing process goes.
 
-The issues I encountered in this assignment are follows,
+The issues I encountered in this assignment are as follows,
 
 1. The Geckodriver for mac is different from that on windows system. In order to fulfill this requirement, I download the Geckodriver from https://github.com/mozilla/geckodriver/releases and change the System.setProperty in the code accordingly, and then the code can work properly.
 
