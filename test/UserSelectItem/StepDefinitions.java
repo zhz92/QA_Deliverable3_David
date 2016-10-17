@@ -146,16 +146,18 @@ public class StepDefinitions {
         driver = new FirefoxDriver();
         driver.get(shoppingCart_PAGE);
         wait = new WebDriverWait(driver, 30);
-
-    }
-
-    @When("I would like to remove this item")
-    public void removeItem() {
+        
         WebElement addToCart = driver.findElement(By.xpath("//input[contains(@value, 'Add To Cart')]"));
         addToCart.submit();
 
         WebElement goToCheckout = (new WebDriverWait(driver, 30)).until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Go to Checkout")));
         goToCheckout.click();
+
+    }
+
+    @When("I would like to remove this item")
+    public void removeItem() {
+        
         WebElement removeItem = (new WebDriverWait(driver, 30)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[contains(@value, 'Remove')]")));
         removeItem.click();
     }
