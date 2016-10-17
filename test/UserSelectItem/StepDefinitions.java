@@ -60,6 +60,8 @@ public class StepDefinitions {
     public void result() {
         WebElement itemInCart = (new WebDriverWait(driver, 30)).until(ExpectedConditions.visibilityOfElementLocated(By.id("checkout_page_container")));
         Assert.assertTrue(itemInCart.getText().contains("iPhone 4S"));
+        WebElement subTotal = (new WebDriverWait(driver, 30)).until(ExpectedConditions.visibilityOfElementLocated(By.id("checkout_page_container")));
+        Assert.assertTrue(subTotal.getText().contains("$270.00"));
     }
 
     /**
@@ -146,7 +148,7 @@ public class StepDefinitions {
         driver = new FirefoxDriver();
         driver.get(shoppingCart_PAGE);
         wait = new WebDriverWait(driver, 30);
-        
+
         WebElement addToCart = driver.findElement(By.xpath("//input[contains(@value, 'Add To Cart')]"));
         addToCart.submit();
 
@@ -157,7 +159,7 @@ public class StepDefinitions {
 
     @When("I would like to remove this item")
     public void removeItem() {
-        
+
         WebElement removeItem = (new WebDriverWait(driver, 30)).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[contains(@value, 'Remove')]")));
         removeItem.click();
     }

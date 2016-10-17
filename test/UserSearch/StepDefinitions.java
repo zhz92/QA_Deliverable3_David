@@ -114,7 +114,7 @@ public class StepDefinitions {
     @Then("the store should return all kinds of items in the store")
     public void seeAllItems() {
         WebElement result = (new WebDriverWait(driver, 30)).until(ExpectedConditions.visibilityOfElementLocated(By.id("grid_view_products_page_container")));
-        Assert.assertTrue(result.getText()!= null);
+        Assert.assertTrue(result.getText().contains("iPhone"));
 
     }
     
@@ -143,7 +143,7 @@ public class StepDefinitions {
     @Then("the store should return all ipads in the store")
     public void seeAllItemsInCategory() {
         WebElement result = (new WebDriverWait(driver, 30)).until(ExpectedConditions.visibilityOfElementLocated(By.id("grid_view_products_page_container")));
-        Assert.assertTrue(result.getText()!= null);
+        Assert.assertTrue(result.getText().contains("iPad 2"));
     }
 
     @After

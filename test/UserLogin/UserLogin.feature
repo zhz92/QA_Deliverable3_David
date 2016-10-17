@@ -1,5 +1,5 @@
 #----------------------------------
-# Empty Cucumber .feature file
+# Cucumber .feature file
 #----------------------------------
     
 Feature: User Login
