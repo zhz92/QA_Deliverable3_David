@@ -25,8 +25,10 @@ The issues I encountered in this assignment are as follows,
   
   Although there are wonderful tool in Chrome to generate xpath automatically, I decide to get the xpath by myself in order to learn how to use it.
 
-4. The scenario 4 for UserSelectItem feature got fail. When the user click remove button in the shopping cart, the store should delete the item and if there was only one item in it before, the web site should show "Oops, there is nothing in your cart." However, in my test for this, the test returns that this item is in the shopping cart even though the web page is shown nothing in the shopping cart. This occurs when I select an element via the webdriver (either by findElement or some other method) and then after I've selected the element the website updates the element. Now the element I selected and the actual element displayed in the browser are out of sync. To fix this, I used the WebDriverWait to wait until the element is completely done rendering.
+4. The scenario 4 for UserSelectItem feature got fail. When the user click remove button in the shopping cart, the store should delete the item and if there was only one item in it before, the web site should show "Oops, there is nothing in your cart." However, in my test for this, the test returns that this item is in the shopping cart even though the web page is shown nothing in the shopping cart. 
 
-After adding the following line, it can work:
+ This occurs when I select an element via the webdriver (either by findElement or some other method) and then after I've selected the element the website updates the element. Now the element I selected and the actual element displayed in the browser are out of sync. To fix this, I used the WebDriverWait to wait until the element is completely done rendering.
 
-wait.until((Predicate<WebDriver>)d -> d.findElement(By.xpath("//div[contains(@class, 'entry-content')]")).getText().equals("Oops, there is nothing in your cart."));
+ After adding the following line, it can work:
+
+ wait.until((Predicate<WebDriver>)d -> d.findElement(By.xpath("//div[contains(@class, 'entry-content')]")).getText().equals("Oops, there is nothing in your cart."));
